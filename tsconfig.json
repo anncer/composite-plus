@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "esnext",
+    "target": "es2015",
+    "moduleResolution": "Node",
+    "strict": true,
+    "resolveJsonModule": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "declarationDir": "types",
+    "lib": ["ESNext", "DOM"]
+  },
+  "include": ["src/**/*", "env.d.ts"],
+  "exclude": ["node_modules"]
+}

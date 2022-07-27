@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "paths": {
+      "composite-plus": ["./src/index"]
+    }
+  },
+  "include": [".", "../../env.d.ts"]
+}

@@ -1,0 +1,142 @@
+{
+  "name": "composite-plus",
+  "private": true,
+  "type": "module",
+  "version": "0.0.5",
+  "description": "a component library for Vue 3",
+  "main": "lib/index.umd.js",
+  "module": "lib/index.es.js",
+  "exports": {
+    ".": {
+      "import": "./lib/index.es.js",
+      "require": "./lib/index.umd.js"
+    },
+    "./lib/": "./lib/"
+  },
+  "types": "types/index.d.ts",
+  "style": "lib/styles/index.css",
+  "sideEffects": [
+    "lib/styles/*"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run check && npm run build:lib && npm run build:helper && npm run build:styles && npm run build:types",
+    "build:lib": "rimraf lib && vite build -c build/build-lib.ts",
+    "build:types": "rimraf types && vue-tsc --declaration --emitDeclarationOnly",
+    "build:helper": "esno build/build-helper.ts",
+    "build:styles": "rimraf lib/styles && esno build/build-styles.ts",
+    "build:docs": "npm run check && rimraf dist && npm run build:manifest && npm run build:ssr && esno build/prerender.ts",
+    "build:manifest": "vite build --ssrManifest --base=/composite-plus/ --outDir ../dist/static",
+    "build:ssr": "vite build --ssr src/entry-server.ts --base=/composite-plus/ --outDir ../dist/server",
+    "check": "npm run lint:test && vue-tsc --noEmit",
+    "test": "vitest",
+    "lint": "eslint . --fix --ext .ts,.vue,.js",
+    "lint:test": "eslint . --ext .ts,.vue,.js --max-warnings 0",
+    "prettier": "prettier --write .",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anncer/composite-plus.git"
+  },
+  "keywords": [
+    "composite-plus",
+    "composite-components",
+    "composite",
+    "composite-ui",
+    "vue",
+    "ui"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anncer/composite-plus/issues"
+  },
+  "homepage": "https://github.com/anncer/composite-plus#readme",
+  "peerDependencies": {
+    "@vueuse/core": "^8.x.x",
+    "vue": "^3.2.x",
+    "vue-router": "^4.0.x"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.0.6",
+    "@vueuse/core": "^9.0.0",
+    "lodash": "^4.17.21",
+    "vue": "^3.2.37",
+    "vue-router": "^4.1.2"
+  },
+  "devDependencies": {
+    "@docsearch/css": "^3.1.1",
+    "@docsearch/js": "^3.1.1",
+    "@stackblitz/sdk": "^1.8.0",
+    "@types/lodash": "^4.14.182",
+    "@types/markdown-it": "^12.2.3",
+    "@types/markdown-it-container": "^2.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.31.0",
+    "@typescript-eslint/parser": "^5.31.0",
+    "@vitejs/plugin-vue": "^3.0.0",
+    "@vue/compiler-sfc": "^3.2.37",
+    "@vue/server-renderer": "^3.2.37",
+    "@vue/test-utils": "^2.0.2",
+    "@vueuse/head": "^0.7.7",
+    "autoprefixer": "^10.4.7",
+    "components-helper": "^2.0.0",
+    "cssnano": "^5.1.12",
+    "escape-html": "^1.0.3",
+    "eslint": "^8.20.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.3.0",
+    "esno": "^0.16.3",
+    "execa": "^6.1.0",
+    "fast-glob": "^3.2.11",
+    "husky": "^8.0.1",
+    "jsdom": "^20.0.0",
+    "lint-staged": "^13.0.3",
+    "markdown-it": "^13.0.1",
+    "markdown-it-anchor": "^8.6.4",
+    "markdown-it-container": "^3.0.0",
+    "postcss": "^8.4.14",
+    "postcss-cli": "^10.0.0",
+    "postcss-import": "^14.1.0",
+    "postcss-preset-env": "^7.7.2",
+    "prettier": "^2.7.1",
+    "prismjs": "^1.28.0",
+    "resize-observer-polyfill": "^1.5.1",
+    "rimraf": "^3.0.2",
+    "sitemap": "^7.1.1",
+    "typescript": "^4.6.4",
+    "vite": "^3.0.0",
+    "vite-plugin-pwa": "^0.12.3",
+    "vite-plugin-vue-markdown": "^0.21.1",
+    "vitest": "^0.19.1",
+    "vue-tsc": "^0.38.4",
+    "workbox-window": "^6.5.3"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search",
+        "@types/react",
+        "markdown-it",
+        "react-dom",
+        "react"
+      ]
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "not ie 11",
+    "not op_mini all"
+  ],
+  "vetur": {
+    "tags": "lib/tags.json",
+    "attributes": "lib/attributes.json"
+  },
+  "web-types": "lib/web-types.json",
+  "files": [
+    "lib",
+    "types"
+  ]
+}
