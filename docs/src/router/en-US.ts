@@ -41,7 +41,7 @@ const enUS: RouteRecordRaw[] = [
         meta: { title: "Changelog" }
       }
     ]
-  },
+  }
   // {
   //   path: "/en-US/components/",
   //   redirect: "/en-US/components/layout",

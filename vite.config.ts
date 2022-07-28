@@ -12,12 +12,15 @@ import createContainer from "./build/plugin/create-container";
 import externalLinkIcon from "./build/plugin/external-link-icon";
 import preWrapper from "./build/plugin/pre-wrapper";
 import type Token from "markdown-it/lib/token";
+import DefineOptions from "unplugin-vue-define-options/vite";
+import VueJsx from "@vitejs/plugin-vue-jsx";
 
 export default defineConfig({
   root: resolve(__dirname, "docs"),
   resolve: {
     alias: {
-      "composite-plus": resolve(__dirname, "packages")
+      "@composite-plus": resolve(__dirname, "packages"),
+      "@docs": resolve(__dirname, "docs")
     }
   },
   build: {
@@ -25,7 +28,7 @@ export default defineConfig({
       output: {
         inlineDynamicImports: false,
         manualChunks: {
-          "modules-vue": ["vue", "vue-router"],
+          "modules-vue": ["vue", "vue-router"]
         }
       }
     }
@@ -34,6 +37,8 @@ export default defineConfig({
     vue({
       include: [/\.vue$/, /\.md$/]
     }),
+    VueJsx(),
+    DefineOptions(),
     Markdown({
       headEnabled: true,
       markdownItOptions: {

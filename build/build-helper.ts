@@ -18,8 +18,7 @@ const reWebTypesSource: ReWebTypesSource = (title) => {
 };
 
 const reDocUrl: ReDocUrl = (fileName, header) => {
-  const docs =
-    "https://tolking.github.io/composite-plus/en-US/components/";
+  const docs = "https://tolking.github.io/composite-plus/en-US/components/";
   const _header = header ? header.replace(/[ ]+/g, "-") : undefined;
   return docs + fileName + (_header ? "#" + header : "");
 };

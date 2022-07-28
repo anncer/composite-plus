@@ -1,5 +1,5 @@
 <template>
-    <!-- <el-card
+  <!-- <el-card
       v-if="needRefresh"
       shadow="always"
       class="pwa-popup"
@@ -23,7 +23,6 @@
       </el-button>
     </el-card> -->
 </template>
-
 
 <style scoped>
 .pwa-popup {

@@ -41,7 +41,7 @@ const zhCN: RouteRecordRaw[] = [
         meta: { title: "更新日志" }
       }
     ]
-  },
+  }
   // {
   //   path: "/zh-CN/components/",
   //   redirect: "/zh-CN/components/layout",
