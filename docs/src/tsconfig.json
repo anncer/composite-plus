@@ -3,9 +3,9 @@
   "compilerOptions": {
     "forceConsistentCasingInFileNames": true,
     "jsx": "preserve",
-    "paths": {
-      "composite-plus": ["./src/index"]
-    }
+    // "paths": {
+    //   "docs": ["./src/index"]
+    // }
   },
   "include": [".", "../../env.d.ts"]
 }

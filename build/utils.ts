@@ -10,9 +10,6 @@ export function camelize(name: string): string {
   return name.replace(/(^|-)(\w)/g, (a, b, c) => c.toUpperCase());
 }
 
-export function hyphenate(name: string): string {
-  return name.replace(/\B([A-Z])/g, "-$1").toLowerCase();
-}
 
 export async function getFileUpdatedTime(filePath: string): Promise<string> {
   const { stdout } = await execa("git", [

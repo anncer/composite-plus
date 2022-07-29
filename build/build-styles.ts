@@ -48,6 +48,6 @@ function transform(input: string) {
 }
 
 (() => {
-  fg.sync(toAbsolute("../src/styles/*")).map(transform);
+  fg.sync(toAbsolute("../packages/theme-chalk/*")).map(transform);
   console.log("build-styles done");
 })();

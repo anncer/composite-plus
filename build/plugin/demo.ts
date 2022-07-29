@@ -1,7 +1,7 @@
 import { existsSync, readFileSync } from "fs";
 import markdown from "markdown-it";
 import { camelize } from "../utils";
-import { highlight } from "./highlight";
+import highlight from "./highlight";
 import type Token from "markdown-it/lib/token";
 
 let scripts: string[] = [];

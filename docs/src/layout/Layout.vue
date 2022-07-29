@@ -1,4 +1,11 @@
 <template>
+  <div>
+    <transition name="el-zoom-in-top" mode="out-in">
+      <img v-if="collapse" src="/logo.svg" alt="logo" class="logo-img" />
+      <span v-else class="logo-title"> composite-plus </span>
+    </transition>
+  </div>
+  <nav-header />
   <!-- <pro-layout :routes="routes" transition="el-fade-in">
     <template #logo="{ collapse }">
       <transition name="el-zoom-in-top" mode="out-in">
@@ -10,7 +17,7 @@
       <pro-breadcrumb />
     </template>
     <template #header-right>
-      <nav-header />
+
     </template>
     <template #header-bottom>
       <pro-tabs ref="tabs" />
@@ -24,8 +31,9 @@
 import { computed, provide, shallowRef } from "vue";
 import { useRouter } from "vue-router";
 import { useLang } from "../composables/index";
-import NavHeader from "../components/NavHeader.vue";
-import PwaPopup from "../components/PwaPopup.vue";
+import NavHeader from "docs/src/components/NavHeader.vue";
+console.log(NavHeader, 'NavHeader')
+// import PwaPopup from "../components/PwaPopup.vue";
 
 const router = useRouter();
 const lang = useLang();

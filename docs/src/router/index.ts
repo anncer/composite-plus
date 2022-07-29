@@ -1,5 +1,4 @@
 import {
-  createMemoryHistory,
   createRouter as _createRouter,
   createWebHistory,
   Router
@@ -12,11 +11,8 @@ import type { RouteRecordRaw } from "vue-router";
 const routes: RouteRecordRaw[] = [...enUS, ...zhCN];
 
 export function createRouter(): Router {
-  const baseUrl = import.meta.env.BASE_URL;
   const router = _createRouter({
-    history: import.meta.env.SSR
-      ? createMemoryHistory(baseUrl)
-      : createWebHistory(baseUrl),
+    history: createWebHistory(),
     routes,
     scrollBehavior(to, from, savedPosition) {
       if (to.hash) {

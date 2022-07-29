@@ -5,7 +5,7 @@ import Markdown from "vite-plugin-vue-markdown";
 import container from "markdown-it-container";
 import { VitePWA } from "vite-plugin-pwa";
 import anchor from "markdown-it-anchor";
-import { highlight } from "./build/plugin/highlight";
+import highlight from "./build/plugin/highlight";
 import snippet from "./build/plugin/snippet";
 import demo from "./build/plugin/demo";
 import createContainer from "./build/plugin/create-container";
@@ -19,11 +19,12 @@ export default defineConfig({
   root: resolve(__dirname, "docs"),
   resolve: {
     alias: {
-      "@composite-plus": resolve(__dirname, "packages"),
-      "@docs": resolve(__dirname, "docs")
+      "composite-plus": resolve(__dirname, "packages"),
+      "docs": resolve(__dirname, "docs")
     }
   },
   build: {
+    outDir: resolve(__dirname, "dist"),
     rollupOptions: {
       output: {
         inlineDynamicImports: false,
@@ -79,7 +80,6 @@ export default defineConfig({
       manifest: {
         id: "/",
         name: "composite-plus",
-        short_name: "pro-components",
         description: "a component library for Vue 3",
         // icons: [
         //   {

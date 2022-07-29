@@ -1,30 +1,21 @@
-import { App, createApp as _createApp, createSSRApp } from "vue";
+import { createApp } from "vue";
+import { createHead } from '@vueuse/head'
 import { createRouter } from "./router/index";
-import { createHead, HeadClient } from "@vueuse/head";
 
-import IconExternalLink from "./components/IconExternalLink.vue";
-import ProCode from "./components/ProCode.vue";
-import Layout from "./App.vue";
+import App from './App.vue'
 import "./styles/index.css";
-import type { Router } from "vue-router";
 
-export function createApp(): {
-  app: App<Element>;
-  router: Router;
-  head: HeadClient;
-} {
-  const app =
-    import.meta.env.MODE === "production"
-      ? createSSRApp(Layout)
-      : _createApp(Layout);
-  const router = createRouter();
-  const head = createHead();
+import CompositePlus from '../../packages/components';
 
-  app
-    .use(router)
-    .use(head)
-    .component("IconExternalLink", IconExternalLink)
-    .component("ProCode", ProCode);
+// import IconExternalLink from './components/IconExternalLink.vue'
+import ProCode from './components/ProCode.vue'
 
-  return { app, router, head };
-}
+const head = createHead()
+const router = createRouter();
+
+const app = createApp(App)
+// .component('IconExternalLink', IconExternalLink)
+app
+  .component('ProCode', ProCode)
+
+app.use(CompositePlus).use(router).use(head).mount('#app')

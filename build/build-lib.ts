@@ -8,7 +8,7 @@ export default defineConfig({
     target: "es2015",
     outDir: toAbsolute("../lib"),
     lib: {
-      entry: toAbsolute("../src/index.ts"),
+      entry: toAbsolute("../packages/components/index.ts"),
       name: camelize(name),
       fileName: (format) => `index.${format}.js`
     },
@@ -21,7 +21,7 @@ export default defineConfig({
         }
       },
       external: (id: string) =>
-        /^(vue|@vue|@vueuse|element-plus|@element-plus|lodash)/.test(id)
+        /^(vue|@vue|@vueuse|lodash)/.test(id)
     }
   },
   plugins: [vue()]

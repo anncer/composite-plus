@@ -13,12 +13,12 @@
     "skipLibCheck": true,
     "declarationDir": "types",
     "paths": {
-      "@composite-plus/*": ["packages/*"],
-      "@docs/*": ["docs/*"]
+      "composite-plus/*": ["packages/*"],
+      "docs/*": ["docs/*"]
     },
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "types": ["unplugin-vue-define-options", "node"]
   },
-  "include": ["packages/**/*", "./env.d.ts"],
+  "include": ["**/*", "./env.d.ts"],
   "exclude": ["node_modules"]
 }

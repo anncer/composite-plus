@@ -1,10 +1,6 @@
-// ref https://github.com/vuejs/vitepress/blob/main/src/node/markdown/plugins/highlight.ts
-// import chalk from 'chalk'
+// copy from [vitepress](https://github.com/vuejs/vitepress)
+import prismjs from "prismjs";
 import escapeHtml from "escape-html";
-import prism from "prismjs";
-// import consola from 'consola'
-
-// prism is listed as actual dep so it's ok to require
 
 function wrap(code: string, lang: string): string {
   if (lang === "text") {
@@ -13,7 +9,7 @@ function wrap(code: string, lang: string): string {
   return `<pre v-pre><code>${code}</code></pre>`;
 }
 
-export const highlight = (str: string, lang: string) => {
+export default (str: string, lang: string): string => {
   if (!lang) {
     return wrap(str, "text");
   }
@@ -31,8 +27,8 @@ export const highlight = (str: string, lang: string) => {
   if (lang === "py") {
     lang = "python";
   }
-  if (prism.languages[lang]) {
-    const code = prism.highlight(str, prism.languages[lang], lang);
+  if (prismjs.languages[lang]) {
+    const code = prismjs.highlight(str, prismjs.languages[lang], lang);
     return wrap(code, rawLang);
   }
   return wrap(str, "text");

@@ -1,13 +1,13 @@
 import { markRaw } from "vue";
 import { House, TakeawayBox } from "@element-plus/icons-vue";
-import BaseLayout from "../layout/Layout.vue";
+import Layout from "../layout/Layout.vue";
 import type { RouteRecordRaw } from "vue-router";
 
 const enUS: RouteRecordRaw[] = [
   {
     path: "/en-US/",
     redirect: "/en-US/guide/",
-    component: BaseLayout,
+    component: Layout,
     meta: { title: "Guide", icon: markRaw(House) },
     children: [
       {
@@ -45,7 +45,7 @@ const enUS: RouteRecordRaw[] = [
   // {
   //   path: "/en-US/components/",
   //   redirect: "/en-US/components/layout",
-  //   component: BaseLayout,
+  //   component: Layout,
   //   meta: { title: "Components", icon: markRaw(TakeawayBox) },
   //   children: [
   //     {
