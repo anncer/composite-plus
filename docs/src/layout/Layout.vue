@@ -1,7 +1,7 @@
 <template>
   <div>
     <transition name="el-zoom-in-top" mode="out-in">
-      <img v-if="collapse" src="/logo.svg" alt="logo" class="logo-img" />
+      <img v-if="collapse" src="../public/logo.svg" alt="logo" class="logo-img" />
       <span v-else class="logo-title"> composite-plus </span>
     </transition>
   </div>
@@ -9,7 +9,7 @@
   <!-- <pro-layout :routes="routes" transition="el-fade-in">
     <template #logo="{ collapse }">
       <transition name="el-zoom-in-top" mode="out-in">
-        <img v-if="collapse" src="/logo.svg" alt="logo" class="logo-img" />
+        <img v-if="collapse" src="../public/logo.svg" alt="logo" class="logo-img" />
         <span v-else class="logo-title"> composite-plus </span>
       </transition>
     </template>
@@ -32,19 +32,16 @@ import { computed, provide, shallowRef } from "vue";
 import { useRouter } from "vue-router";
 import { useLang } from "../composables/index";
 import NavHeader from "docs/src/components/NavHeader.vue";
-console.log(NavHeader, 'NavHeader')
 // import PwaPopup from "../components/PwaPopup.vue";
 
 const router = useRouter();
 const lang = useLang();
-const tabs = shallowRef({});
 const routes = computed(() => {
   const reg = new RegExp(`^\\/(${lang.value}|dev)\\/`);
   const routes = router.options.routes;
   return routes.filter((item) => reg.test(item.path));
 });
 
-provide("tabs", tabs);
 </script>
 
 <style scoped>

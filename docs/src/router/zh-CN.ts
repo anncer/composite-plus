@@ -41,95 +41,20 @@ const zhCN: RouteRecordRaw[] = [
         meta: { title: "更新日志" }
       }
     ]
+  },
+  {
+    path: "/zh-CN/components/",
+    redirect: "/zh-CN/components/button",
+    component: Layout,
+    meta: { title: "Components", icon: markRaw(TakeawayBox) },
+    children: [
+      {
+        path: "/zh-CN/components/button",
+        component: () => import("../../examples/zh-CN/components/button.md"),
+        meta: { title: "button" }
+      }
+    ]
   }
-  // {
-  //   path: "/zh-CN/components/",
-  //   redirect: "/zh-CN/components/layout",
-  //   component: Layout,
-  //   meta: { title: "组件", icon: markRaw(TakeawayBox) },
-  //   children: [
-  //     {
-  //       path: "/zh-CN/components/layout",
-  //       component: () => import("../../examples/zh-CN/components/Layout.md"),
-  //       meta: { title: "Layout" }
-  //     },
-  //     {
-  //       path: "/zh-CN/components/card",
-  //       component: () => import("../../examples/zh-CN/components/Card.md"),
-  //       meta: { title: "Card" }
-  //     },
-  //     {
-  //       path: "/zh-CN/components/menu",
-  //       component: () => import("../../examples/zh-CN/components/Menu.md"),
-  //       meta: { title: "Menu" }
-  //     },
-  //     {
-  //       path: "/zh-CN/components/breadcrumb",
-  //       component: () => import("../../examples/zh-CN/components/Breadcrumb.md"),
-  //       meta: { title: "Breadcrumb" }
-  //     },
-  //     {
-  //       path: "/zh-CN/components/tabs",
-  //       component: () => import("../../examples/zh-CN/components/Tabs.md"),
-  //       meta: { title: "Tabs" }
-  //     },
-  //     {
-  //       path: "/zh-CN/components/link",
-  //       component: () => import("../../examples/zh-CN/components/Link.md"),
-  //       meta: { title: "Link" }
-  //     },
-  //     {
-  //       path: "/zh-CN/components/form",
-  //       component: () => import("../../examples/zh-CN/components/Form.md"),
-  //       meta: { title: "Form" }
-  //     },
-  //     {
-  //       path: "/zh-CN/components/radio",
-  //       component: () => import("../../examples/zh-CN/components/Radio.md"),
-  //       meta: { title: "Radio" }
-  //     },
-  //     {
-  //       path: "/zh-CN/components/checkbox",
-  //       component: () => import("../../examples/zh-CN/components/Checkbox.md"),
-  //       meta: { title: "Checkbox" }
-  //     },
-  //     {
-  //       path: "/zh-CN/components/select",
-  //       component: () => import("../../examples/zh-CN/components/Select.md"),
-  //       meta: { title: "Select" }
-  //     },
-  //     {
-  //       path: "/zh-CN/components/tree-select",
-  //       component: () => import("../../examples/zh-CN/components/TreeSelect.md"),
-  //       meta: { title: "TreeSelect" }
-  //     },
-  //     {
-  //       path: "/zh-CN/components/input-tag",
-  //       component: () => import("../../examples/zh-CN/components/InputTag.md"),
-  //       meta: { title: "InputTag" }
-  //     },
-  //     {
-  //       path: "/zh-CN/components/table",
-  //       component: () => import("../../examples/zh-CN/components/Table.md"),
-  //       meta: { title: "Table" }
-  //     },
-  //     {
-  //       path: "/zh-CN/components/crud",
-  //       component: () => import("../../examples/zh-CN/components/Crud.md"),
-  //       meta: { title: "Crud" }
-  //     },
-  //     {
-  //       path: "/zh-CN/components/column-setting",
-  //       component: () => import("../../examples/zh-CN/components/ColumnSetting.md"),
-  //       meta: { title: "ColumnSetting" }
-  //     },
-  //     {
-  //       path: "/zh-CN/components/descriptions",
-  //       component: () => import("../../examples/zh-CN/components/Descriptions.md"),
-  //       meta: { title: "Descriptions" }
-  //     }
-  //   ]
-  // }
 ];
 
 export default zhCN;
