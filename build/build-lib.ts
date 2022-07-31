@@ -6,7 +6,7 @@ import { camelize, toAbsolute } from "./utils";
 export default defineConfig({
   build: {
     target: "es2015",
-    outDir: toAbsolute("../lib"),
+    outDir: toAbsolute("../dist/composite-plus"),
     lib: {
       entry: toAbsolute("../packages/components/index.ts"),
       name: camelize(name),
@@ -14,10 +14,9 @@ export default defineConfig({
     },
     rollupOptions: {
       output: {
-        exports: "named",
-        globals: (id: string) => {
-          const name = id.replace(/^@/, "").split("/")[0];
-          return camelize(name);
+        // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
+        globals: {
+          vue: 'Vue'
         }
       },
       external: (id: string) =>
