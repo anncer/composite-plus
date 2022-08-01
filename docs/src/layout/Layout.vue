@@ -1,7 +1,7 @@
 <template>
   <div>
     <transition name="el-zoom-in-top" mode="out-in">
-      <img v-if="collapse" src="../public/logo.svg" alt="logo" class="logo-img" />
+      <!-- <img v-if="collapse" src="../public/logo.svg" alt="logo" class="logo-img" /> -->
       <span v-else class="logo-title"> composite-plus </span>
     </transition>
   </div>

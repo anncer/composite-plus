@@ -5,8 +5,9 @@
 </template>
 
 <script lang="ts" setup>
-defineOptions({
-  name: "CeButton"
+import { defineComponent } from "vue";
+defineComponent({
+  name: "CeButton",
 });
 defineEmits(["click"]);
 </script>

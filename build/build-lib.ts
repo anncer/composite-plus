@@ -6,7 +6,7 @@ import { camelize, toAbsolute } from "./utils";
 export default defineConfig({
   build: {
     target: "es2015",
-    outDir: toAbsolute("../dist/composite-plus"),
+    outDir: toAbsolute("../lib"),
     lib: {
       entry: toAbsolute("../packages/components/index.ts"),
       name: camelize(name),

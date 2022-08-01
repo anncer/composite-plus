@@ -91,6 +91,15 @@ onUnmounted(() => {
   window.removeEventListener("scroll", handleScroll);
 });
 
+function toggleShow () {
+  console.log('toggleShow')
+}
+
+function open () {
+  console.log('open')
+}
+
+const show = ref(false)
 // watch(show, (value) => {
 //   if (value) {
 //     meta.value.style.height = `${codeAreaHeight.value}px`

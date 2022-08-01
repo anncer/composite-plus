@@ -15,12 +15,10 @@ import consola from 'consola'
 const resolve = path.resolve
 export const projRoot = resolve(__dirname, '..', '..')
 /** `/dist` */
-export const buildOutput = resolve(projRoot, 'dist')
-/** `/dist/element-plus` */
-export const epOutput = resolve(buildOutput, 'composite-plus')
+// export const buildOutput = resolve(projRoot, 'dist')
 
 const distFolder = path.resolve(__dirname, 'dist')
-const distBundle = path.resolve(epOutput, 'theme-chalk')
+const distBundle = path.resolve(projRoot, 'theme-chalk')
 
 /**
  * compile theme-chalk scss & minify
