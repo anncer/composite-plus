@@ -2,7 +2,7 @@
   <div>
     <transition name="el-zoom-in-top" mode="out-in">
       <!-- <img v-if="collapse" src="../public/logo.svg" alt="logo" class="logo-img" /> -->
-      <span v-else class="logo-title"> composite-plus </span>
+      <span class="logo-title"> composite-plus </span>
     </transition>
   </div>
   <nav-header />
@@ -31,7 +31,7 @@
 import { computed, provide, shallowRef } from "vue";
 import { useRouter } from "vue-router";
 import { useLang } from "../composables/index";
-import NavHeader from "docs/src/components/NavHeader.vue";
+import NavHeader from "@docs/src/components/NavHeader.vue";
 // import PwaPopup from "../components/PwaPopup.vue";
 
 const router = useRouter();

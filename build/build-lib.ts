@@ -2,8 +2,17 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import { name } from "../package.json";
 import { camelize, toAbsolute } from "./utils";
+import DefineOptions from "unplugin-vue-define-options/vite";
+import VueJsx from "@vitejs/plugin-vue-jsx";
+import { resolve } from "path";
 
 export default defineConfig({
+  resolve: {
+    alias: {
+      "@composite-plus": resolve(__dirname, "../packages"),
+      "@docs": resolve(__dirname, "../docs")
+    }
+  },
   build: {
     target: "es2015",
     outDir: toAbsolute("../lib"),
@@ -23,5 +32,9 @@ export default defineConfig({
         /^(vue|@vue|@vueuse|lodash)/.test(id)
     }
   },
-  plugins: [vue()]
+  plugins: [
+    vue(),
+    VueJsx(),
+    DefineOptions(),
+  ]
 });

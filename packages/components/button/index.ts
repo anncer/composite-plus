@@ -1,10 +1,9 @@
-import { App, Plugin } from 'vue';
-import Button from './src/index.vue';
+import { withInstall } from '@composite-plus/utils'
+import Button from './src/index.vue'
 
-export const ButtonPlugin: Plugin = {
-  install(app: App) {
-    app.component('ce-button', Button);
-  },
-};
+export const EButton = withInstall(Button)
+export default EButton
 
-export { Button  };
+export * from './src/button'
+
+

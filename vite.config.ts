@@ -19,8 +19,8 @@ export default defineConfig({
   root: resolve(__dirname, "docs"),
   resolve: {
     alias: {
-      "composite-plus": resolve(__dirname, "packages"),
-      "docs": resolve(__dirname, "docs")
+      "@composite-plus": resolve(__dirname, "packages"),
+      "@docs": resolve(__dirname, "docs")
     }
   },
   build: {
@@ -54,7 +54,7 @@ export default defineConfig({
           // .use(container, "demo", demo)
           .use(externalLinkIcon)
           .use(anchor, {
-            slugify: (str) => str.replaceAll(/[ ]/g, "-").toLowerCase(),
+            slugify: (str) => str.replace(/[ ]/g, "-").toLowerCase(),
             permalink: anchor.permalink.ariaHidden({})
           })
           .use(...createContainer("tip", "TIP"))
