@@ -12,27 +12,27 @@ const enUS: RouteRecordRaw[] = [
     children: [
       {
         path: "/en-US/guide/introduction",
-        component: () => import("../../examples/en-US/guide/introduction.md"),
+        component: () => import("../../docs/en-US/guide/introduction.md"),
         meta: { title: "Introduction" }
       },
       {
         path: "/en-US/guide/",
-        component: () => import("../../examples/en-US/guide/index.md"),
+        component: () => import("../../docs/en-US/guide/index.md"),
         meta: { title: "Quick Start" }
       },
       {
         path: "/en-US/guide/i18n",
-        component: () => import("../../examples/en-US/guide/i18n.md"),
+        component: () => import("../../docs/en-US/guide/i18n.md"),
         meta: { title: "Internationalization" }
       },
       {
         path: "/en-US/guide/theme",
-        component: () => import("../../examples/en-US/guide/theme.md"),
+        component: () => import("../../docs/en-US/guide/theme.md"),
         meta: { title: "Custom Theme" }
       },
       {
         path: "/en-US/guide/router",
-        component: () => import("../../examples/en-US/guide/router.md"),
+        component: () => import("../../docs/en-US/guide/router.md"),
         meta: { title: "Router and Menu" }
       },
       {
@@ -50,7 +50,7 @@ const enUS: RouteRecordRaw[] = [
     children: [
       {
         path: "/en-US/components/button",
-        component: () => import("../../examples/en-US/components/button.md"),
+        component: () => import("../../docs/en-US/components/button.md"),
         meta: { title: "button" }
       }
     ]

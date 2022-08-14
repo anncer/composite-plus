@@ -12,27 +12,27 @@ const zhCN: RouteRecordRaw[] = [
     children: [
       {
         path: "/zh-CN/guide/introduction",
-        component: () => import("../../examples/zh-CN/guide/introduction.md"),
+        component: () => import("../../docs/zh-CN/guide/introduction.md"),
         meta: { title: "介绍" }
       },
       {
         path: "/zh-CN/guide/",
-        component: () => import("../../examples/zh-CN/guide/index.md"),
+        component: () => import("../../docs/zh-CN/guide/index.md"),
         meta: { title: "快速上手" }
       },
       {
         path: "/zh-CN/guide/i18n",
-        component: () => import("../../examples/zh-CN/guide/i18n.md"),
+        component: () => import("../../docs/zh-CN/guide/i18n.md"),
         meta: { title: "国际化" }
       },
       {
         path: "/zh-CN/guide/theme",
-        component: () => import("../../examples/zh-CN/guide/theme.md"),
+        component: () => import("../../docs/zh-CN/guide/theme.md"),
         meta: { title: "自定义主题" }
       },
       {
         path: "/zh-CN/guide/router",
-        component: () => import("../../examples/zh-CN/guide/router.md"),
+        component: () => import("../../docs/zh-CN/guide/router.md"),
         meta: { title: "路由和菜单" }
       },
       {
@@ -50,7 +50,7 @@ const zhCN: RouteRecordRaw[] = [
     children: [
       {
         path: "/zh-CN/components/button",
-        component: () => import("../../examples/zh-CN/components/button.md"),
+        component: () => import("../../docs/zh-CN/components/button.md"),
         meta: { title: "button" }
       }
     ]

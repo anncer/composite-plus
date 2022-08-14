@@ -17,15 +17,15 @@ export default {
         scripts = [];
         isFirst = false;
         count = tokens.filter((item) => {
-          return item.markup === ":::" && /^\s*demo/.test(item.info);
+          return item.markup === ":::" && /^\s*docs\/examples/.test(item.info);
         }).length;
       }
 
-      const matchedInfo = info.trim().match(/^demo\s+(.*)$/);
+      const matchedInfo = info.trim().match(/^docs\/examples\s+(.*)$/);
       const description = matchedInfo && matchedInfo[1];
       const descTemplate = markdown().render(description || "");
       const link = tokens[idx + 2].content.trim();
-      const componentName = link.replace(/^@\/demo\/(.*).vue/, (_, $1) => {
+      const componentName = link.replace(/^@\/docs\/examples\/(.*).vue/, (_, $1) => {
         return $1.replaceAll("/", "-").toLocaleLowerCase();
       });
       const rawPath = link.replace(/^@/, process.cwd());
